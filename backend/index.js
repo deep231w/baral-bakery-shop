@@ -1,5 +1,6 @@
 const express = require('express');
 const connectDB= require('./config/db.js');
+console.log('MONGO_URI:', process.env.MONGODB_URL);
 const userRoutes= require('./routes/User.js');
 const orderRoutes= require('./routes/Order.js');
 const productRoutes= require('./routes/Product.js');
