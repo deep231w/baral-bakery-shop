@@ -13,12 +13,10 @@ const userSchema= new mongoose.Schema({
     firstName: {
         type: String,
         required: true,
-        unique: true
     },
     lastName: {
         type: String,
         required: true,
-        unique: true
     }
 },{
     timestamps: true // Automatically adds createdAt and updatedAt fields
