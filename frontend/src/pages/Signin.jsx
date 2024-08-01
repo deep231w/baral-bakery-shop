@@ -12,7 +12,7 @@ export const Signin=()=>{
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
-    return <> <div>
+    return <> <div> 
         <Appbar/>
     <div className="flex justify-center ">
         <div className="rounded-lg bg-white w-80 text-center p-2 h-max px-4">
