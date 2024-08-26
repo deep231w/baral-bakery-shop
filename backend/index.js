@@ -6,10 +6,12 @@ const orderRoutes= require('./routes/Order.js');
 const productRoutes= require('./routes/Product.js');
 const authMiddleware= require('./middleware/auth.js');
 const cors = require('cors');
-//const dotenv = require('.env');
+const dotenv = require('dotenv');
+
+dotenv.config();
 connectDB();
 const app= express();
-const port= 3000;
+const port= process.env.PORT||3000;
 app.use(cors()); // Enable CORS
 app.use(express.json());
 
