@@ -12,12 +12,21 @@ const signupBody= zod.object({
     lastName: zod.string()
 })
 router.post('/signup',async(req, res) => {
-    const {success}= signupBody.safeParse(req.body)
-    if(!success){
-        return res.status(400).json({
-            error: 'Invalid input/ email alredy taken'
-        })
-    }
+    // const {success}= signupBody.safeParse(req.body)
+    // if(!success){
+    //     return res.status(400).json({
+    //         error: 'Invalid input/ email alredy taken'
+    //     })
+    // }
+
+    const { success, error } = signupBody.safeParse(req.body);
+if (!success) {
+  return res.status(400).json({
+    error: 'Invalid input: ' + error.issues.map(issue => issue.message).join(', ')
+  });
+}
+
+
     const existingUser= await User.findOne({
         email: req.body.email
     })
