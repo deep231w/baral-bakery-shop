@@ -30,7 +30,7 @@ export const Signin=()=>{
                     password
                 })
                 localStorage.setItem('token', response.data.token);
-                navigate('/dashboard');
+                navigate('/');
         }}/>
         <ButtomWarning label={"Alredy have an account? "} buttonText={"Signup"}to={'/signup'}/>
         </div>
