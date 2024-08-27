@@ -57,7 +57,7 @@ export const ProductListing = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const { data } = await axios.get('http://localhost:3000/api/products');
+        const { data } = await axios.get('https://baral-bakery-shop.onrender.com/api/products');
         console.log('API response:', data);
 
         if (data && Array.isArray(data.products)) {

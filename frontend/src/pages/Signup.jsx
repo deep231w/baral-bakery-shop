@@ -38,7 +38,7 @@ export const Signup=()=>{
             setPassword(e.target.value)
             }}/>
                     <Button onClick={async()=>{
-                const response= await axios.post('http://localhost:3000/api/users/signup',{
+                const response= await axios.post('https://baral-bakery-shop.onrender.com/api/users/signup',{
                     firstName,
                     lastName,
                     email,
