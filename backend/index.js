@@ -34,10 +34,10 @@ app.use(cors(corsOptions));
 app.use('/api/users',userRoutes);
 
 app.use('/api/orders',orderRoutes);
+app.use(authMiddleware);
 
 app.use('/api/products',productRoutes);
 
-app.use(authMiddleware);
 app.get("/",(req, res)=>{
         res.send("Welcome")
     })

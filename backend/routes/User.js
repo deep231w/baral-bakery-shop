@@ -35,7 +35,7 @@ if (!success) {
             error: 'Email already exists'
         })
     }
-    const user= await User.create({
+    try{const user= await User.create({
         email: req.body.email,
         password: req.body.password,
         firstName: req.body.firstName,
@@ -48,7 +48,12 @@ if (!success) {
     res.json({
         message:"user created successfully",
         token: token
-    })
+    })}
+    catch{
+        res.status(500).json({
+            error: 'Server error'
+        })
+    }
 })
 
 const signinBody= zod.object({
